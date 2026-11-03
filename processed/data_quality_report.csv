@@ -1,0 +1,53 @@
+Section,Item,Value
+Source files,crop_production.csv,MISSING
+Source files,crop_clean.csv,MISSING
+Source files,rainfall.csv,MISSING
+Source files,rainfall_districtwise_daily_imd.csv,MISSING
+Source files,krishipredict_crop_master.csv,present
+Source files,krishipredict_annual_rainfall.csv,present
+Source files,krishipredict_current_daily_rainfall.csv,present
+Crop data,Source used,krishipredict_crop_master.csv
+Crop data,Original record count,"402,342"
+Crop data,Cleaned record count,"402,342"
+Crop cleaning steps,Load source file,"removed 0 | rows after 402,342 krishipredict_crop_master.csv"
+Crop cleaning steps,Drop rows with missing key/Area/Production values,"removed 0 | rows after 402,342"
+Crop cleaning steps,Drop exact duplicate rows,"removed 0 | rows after 402,342"
+Crop cleaning steps,Drop rows with Area <= 0 (yield undefined),"removed 0 | rows after 402,342"
+Crop cleaning steps,Drop rows with negative Production,"removed 0 | rows after 402,342"
+Crop cleaning steps,"Check duplicate (state,district,year,season,crop) keys","removed 0 | rows after 402,342 0 found (kept, reported only)"
+Crop missing values (source),State_Name,0
+Crop missing values (source),District_Name,0
+Crop missing values (source),Crop_Year,0
+Crop missing values (source),Season,0
+Crop missing values (source),Crop,0
+Crop missing values (source),Area,0
+Crop missing values (source),Production,0
+Crop missing values (source),Yield,0
+Crop data types (source),State_Name,str
+Crop data types (source),District_Name,str
+Crop data types (source),Crop_Year,int64
+Crop data types (source),Season,str
+Crop data types (source),Crop,str
+Crop data types (source),Area,float64
+Crop data types (source),Production,float64
+Crop data types (source),Yield,float64
+"Crop flags (kept, not deleted)",Zero production (area>0) - treated as 'not reported' for yield,"3,969"
+"Crop flags (kept, not deleted)",Tiny area (< 1.0 ha),129
+"Crop flags (kept, not deleted)","Far-out high yield outliers (per-crop log-IQR, k=3)",410
+"Crop flags (kept, not deleted)",Records valid for yield statistics / ML,"397,835"
+Production units (assumption),bales,"4 crop(s), 12,273 records: Cotton(Lint), Jute, Jute & Mesta, Mesta"
+Production units (assumption),nuts,"1 crop(s), 3,267 records: Coconut"
+Production units (assumption),tonnes,"110 crop(s), 386,802 records: Apple, Arcanut (Processed), Arecanut, Arhar/Tur, Ash Gourd, Atcanut (Raw), Bajra, Banana"
+Crop coverage,Years,1997-2022
+Crop coverage,States / districts / crops,34 / 740 / 115
+Crop coverage,Records in first vs last year (reporting coverage grows),"9,433 vs 18,703"
+Annual rainfall,Original / cleaned records,"4,090 / 4,090"
+Annual rainfall,Years / subdivisions,1901-2015 / 36
+Annual rainfall,Missing values (source),0
+Current daily rainfall,Original / cleaned records,"54,556 / 54,556"
+Current daily rainfall,Date range,2026-08-19 to 2026-11-02
+Current daily rainfall,States / districts,37 / 728
+Current daily rainfall,State spelling variants merged (rows),2400
+Current daily rainfall,'ND' (no data) rows - rainfall set to missing,630
+Current daily rainfall,Calendar days absent from file,2026-10-31
+Current daily rainfall,Columns available,"Daily actual, daily normal, IMD category only (no weekly/cumulative columns)"
